@@ -1,0 +1,11 @@
+package day24;
+
+public interface Engine {
+
+
+    void ecoEngine();
+
+    void price();
+
+int price= 7500;
+}
