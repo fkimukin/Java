@@ -17,6 +17,71 @@ public class Options extends Account{
 
     boolean flag= true;
 
+    public void login(){
+        System.out.println("Hello ,Welcome to Kimukin ATM...");
+        int counter=0;
+        do {
+            data.put(12345, 1234);
+            data.put(23456, 2345);
+            data.put(34567, 3456);
+            data.put(45678, 4567);
+
+
+
+            try{
+                System.out.println("Enter the account number");
+                setAccountNumber(input.nextInt());
+                System.out.println("Enter Pin number");
+                setPinNumber(input.nextInt());
+
+            }catch (Exception e){
+                e.printStackTrace();
+                System.out.println("you have entered invalid character(s)! Please select an integer or press 'q' to exit.");
+                input.nextLine();
+                String exit= input.next();
+                if (exit.equalsIgnoreCase("q")){
+                    flag=false;
+                    break;
+                }
+
+            }
+            int count=0;
+            for (Map.Entry<Integer,Integer> w: data.entrySet()){
+                if (w.getKey().equals(getAccountNumber()) && w.getValue().equals(getPinNumber())){
+        getAccountTypes();
+                }else {
+                    count++;
+                }
+
+            }
+            if (count==data.size()){
+                System.out.println("Account number or Pin is invalid.");
+                System.out.println("Please enter a valid number or press q to exit");
+                input.nextLine();
+                String exit= input.next();
+                if (exit.equalsIgnoreCase("q")) {
+                    flag = false;
+
+                }
+            }
+if (counter== 3){
+    System.out.println("your account blocked");
+    flag=false;
+    
+}
+        }while (flag);
+
+
+
+
+
+    }
+
+
+
+
+
+
     public void optionDisplay() {
         System.out.println("Select Options:");
         System.out.println("1: View Balance");
