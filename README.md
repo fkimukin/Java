@@ -1,2 +1,3 @@
 # Java
-My java learning progress.
+My Core java learning progress.
+simple most used learning code.
